@@ -26,7 +26,7 @@ namespace lb6
                     Console.WriteLine("*******************************");
                     Console.WriteLine("1 - Добавить запись");
                     Console.WriteLine("2 - Удалить запись");
-                    //Console.WriteLine("3 - Поиск по одному признаку");
+                    Console.WriteLine("3 - Поиск по одному признаку");
                     //Console.WriteLine("4 - Сортировать по фамилии");
                     Console.WriteLine("5 - Перейти к записи №");
                     Console.WriteLine("6 - Отобразить список");
@@ -65,8 +65,8 @@ namespace lb6
                             Thread.Sleep(3000);
                             break;
                         case '3':
-                             book.Sort();
-                            
+                            book.Sort(delegate (book us1, book us2)
+                            { return us1.nameFirst.CompareTo(us2.nameFirst); });  
                             break;
                         case '4':
                             
@@ -98,7 +98,7 @@ namespace lb6
                                 book[i].print();
                                 if (i == book.Count - 1)
                                 {
-                                    Console.WriteLine("Записная книга закончена. Нажмите любую клавишу");
+                                    Console.WriteLine("Отображение завершено. Нажмите любую клавишу");
                                     _getch();
                                 }
                             }
