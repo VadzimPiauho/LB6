@@ -30,7 +30,7 @@ namespace lb6
 
         public void print()
         {
-            Console.WriteLine($"Имя {nameFirst} Фамилия {nameLast} Почтовый адрес {mail} Телефон {number}");
+            Console.WriteLine($"Имя -\t{nameFirst}\t\t Фамилия-\t {nameLast}\t\t Почтовый адрес-\t {mail}\t\t Телефон-\t {number}");
         }
 
 
