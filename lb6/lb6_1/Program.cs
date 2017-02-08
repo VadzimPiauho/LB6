@@ -32,10 +32,26 @@ namespace lb6_1
             //    Console.WriteLine("{2}.\t{1}\t\t{0}", j, wordCount[j], k);
             //    k++;
             //}
+            for (i = 0; i < wordCount.Count; i++)
+            {
+                wordCount[i].Values;
+                for (int j = 0; i < wordCount.Count; i++)
+                {
+
+                }
+            }
+
+
+
+
+
+
+
+
 
             Console.WriteLine("\t\t\t{0}\t\t{1}", "Слово:","Кол-во:");
             foreach (KeyValuePair<int, string> keyValue in wordCount)
-            {
+            {                
                 Console.WriteLine("{2}.\t{1}\t\t{0}", keyValue.Key, keyValue.Value.PadLeft(20), k);
                 k++;
             }
