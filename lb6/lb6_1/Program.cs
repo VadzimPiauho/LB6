@@ -35,14 +35,14 @@ namespace lb6_1
             for (i = 0; i < wordCount.Count; i++)
             {
                 k = 0;
-                for (int j = 0; i < wordCount.Count; i++)
+                for (int j = 0; j < wordCount.Count; j++)
                 {     
                     if (wordCount[i]== wordCount[j])
                     {
                         k++;
                     }
-                    finalResult.Add(k, wordCount[i]);
                 }
+                finalResult.Add(k, wordCount[i]);
             }     
 
 
