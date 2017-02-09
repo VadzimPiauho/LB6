@@ -14,7 +14,9 @@ namespace lb6_1
             List<string> wordCount = new List<string>();
             Dictionary<int,string> finalResult = new Dictionary<int,string>(); 
             int i;
-            int k = 1;            
+            int k = 1;
+            int notValue=10;
+            int unic = 0;
             string[] split = text.Split(' ', '.', ',', '!', '\'');
             foreach (string s in split)
             {
@@ -40,19 +42,25 @@ namespace lb6_1
                     if (wordCount[i]== wordCount[j])
                     {
                         k++;
-                    }
+                    }                    
                 }
-                finalResult.Add(k, wordCount[i]);
-            }     
+                finalResult.Add(k + notValue, wordCount[i]);
+                notValue= notValue+5;
+            }
 
-
+            notValue = 10;
             Console.WriteLine("\t\t\t{0}\t\t{1}", "Слово:","Кол-во:");
             foreach (KeyValuePair<int, string> keyValue in finalResult)
             {                
-                Console.WriteLine("{2}.\t{1}\t\t{0}", keyValue.Key, keyValue.Value.PadLeft(20), k);
+                Console.WriteLine("{2}.\t{1}\t\t{0}", keyValue.Key-notValue, keyValue.Value.PadLeft(20), k);
+                if ((keyValue.Key - notValue) == 1)
+                {
+                    unic++;
+                }
                 k++;
+                notValue = notValue + 5;
             }
-            Console.WriteLine("Всего слов: {0} из них уникальных:", finalResult.Count);
+            Console.WriteLine("Всего слов: {0} из них уникальных: {1}", finalResult.Count, unic);
 
         }
 
